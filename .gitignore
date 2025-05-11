@@ -174,3 +174,5 @@ cython_debug/
 .pypirc
 .history
 .DS_Store
+clase_2/jupyter_notebooks/fasttext.pkl
+clase_2/jupyter_notebooks/gloveembedding.pkl
