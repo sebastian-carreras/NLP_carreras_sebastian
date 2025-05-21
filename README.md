@@ -1,3 +1,5 @@
-## Alumno: Sebastian Carreras
+# Repositorio para los desafios de la materia de Procesamiento de Lenguaje Natural 
 
-### Los desafios se encuentran en las carpetas "clase_x/ejercicios" al final de cada enunciado.
+### Alumno: Sebastian Carreras
+
+#### Los desafios se encuentran en las carpetas "clase_x/ejercicios" al final de cada enunciado.
