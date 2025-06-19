@@ -176,3 +176,8 @@ cython_debug/
 .DS_Store
 clase_2/jupyter_notebooks/fasttext.pkl
 clase_2/jupyter_notebooks/gloveembedding.pkl
+Desafio 4/ejercicios/cc.en.300.vec
+Desafio 4/ejercicios/cc.en.300.vec.gz
+Desafio 4/ejercicios/cc.en.300.vec.pkl
+Desafio 4/ejercicios/gloveembedding (1).pkl
+Desafio 4/ejercicios/gloveembedding.pkl
