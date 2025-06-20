@@ -5,6 +5,8 @@
 
 #### Los desafios se encuentran en las carpetas "Desafio/ejercicios" al final de cada enunciado.
 
+---
+
 ## Desafío 1
 - Vectorizar documentos. Tomar 5 documentos al azar y medir similaridad con el resto de los documentos. Estudiar los 5 documentos más similares de cada uno analizar si tiene sentido la similaridad según el contenido del texto y la etiqueta de clasificación.
 - Entrenar modelos de clasificación Naïve Bayes para maximizar el desempeño de clasificación (f1-score macro) en el conjunto de datos de test. Considerar cambiar parámteros de instanciación del vectorizador y los modelos y probar modelos de Naïve Bayes Multinomial y ComplementNB.
@@ -15,6 +17,8 @@ Clasificación de texto, vectorización de características con TF-IDF (Term Fre
 
 ### Modelos desarrollados: 
 Naive Bayes Multinomial (MultinomialNB) y Complement Naive Bayes (ComplementNB).
+
+---
 
 ## Desafío 2
 - Crear sus propios vectores con Gensim basado en lo visto en clase con otro dataset.
@@ -28,7 +32,9 @@ Procesamiento de lenguaje natural (NLP), creación de embeddings de palabras (wo
 ### Modelos desarrollados: 
 Modelo Word2Vec, implementado con la librería Gensim para aprender las representaciones vectoriales de las palabras
 
-### Desafío 3
+---
+
+## Desafío 3
 - Seleccionar un corpus de texto sobre el cual entrenar el modelo de lenguaje.
 - Realizar el pre-procesamiento adecuado para tokenizar el corpus, estructurar el dataset y separar entre datos de entrenamiento y validación.
 - Proponer arquitecturas de redes neuronales basadas en unidades recurrentes para implementar un modelo de lenguaje.
@@ -45,7 +51,10 @@ Red Neuronal Recurrente con una arquitectura secuencial que incluye capas de Emb
 - Explorar utilizar SimpleRNN (celda de Elman), LSTM y GRU.
 - rmsprop es el optimizador recomendado para la buena convergencia. No obstante se pueden explorar otros.
 
+---
+
 ## Desafío 4
+- Implementar un modelo de traducción automática neuronal (Neural Machine Translation) utilizando la arquitectura Encoder-Decoder con LSTM.
 - Construir QA Bot basado en el ejemplo del traductor pero con un dataset QA LINK
 ### Recomendaciones:
 - MAX_VOCAB_SIZE = 8000
