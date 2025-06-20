@@ -18,6 +18,9 @@ Clasificación de texto, vectorización de características con TF-IDF (Term Fre
 ### Modelos desarrollados: 
 Naive Bayes Multinomial (MultinomialNB) y Complement Naive Bayes (ComplementNB).
 
+### Notebook: 
+- https://github.com/chatoxz-wp/NPL_carreras_sebastian/blob/main/Desafio%201/ejercicios/Desafio_1.ipynb
+
 ---
 
 ## Desafío 2
