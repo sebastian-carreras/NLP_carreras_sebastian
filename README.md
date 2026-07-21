@@ -21,7 +21,7 @@ Naive Bayes Multinomial (MultinomialNB) y Complement Naive Bayes (ComplementNB).
 
 
 ### Notebook: 
-- [Desafío 1](https://github.com/chatoxz-wp/NPL_carreras_sebastian/blob/main/Desafio%201/ejercicios/Desafio_1.ipynb)
+- [Desafío 1](https://github.com/sebastian-carreras/NLP_carreras_sebastian/blob/main/Desafio%201/ejercicios/Desafio_1.ipynb)
 
 ---
 
@@ -39,7 +39,7 @@ Procesamiento de lenguaje natural (NLP), creación de embeddings de palabras (wo
 Modelo Word2Vec, implementado con la librería Gensim para aprender las representaciones vectoriales de las palabras
 
 ### Notebook: 
-- [Desafío 2](https://github.com/chatoxz-wp/NPL_carreras_sebastian/blob/main/Desafio%202/ejercicios/Desafio_2.ipynb)
+- [Desafío 2](https://github.com/sebastian-carreras/NLP_carreras_sebastian/blob/main/Desafio%202/ejercicios/Desafio_2.ipynb)
 
 ---
 
@@ -62,7 +62,7 @@ Modelado de lenguaje, generación de texto, redes neuronales recurrentes (RNN), 
 Red Neuronal Recurrente con una arquitectura secuencial que incluye capas de Embedding, LSTM (Long Short-Term Memory) y una capa Densa con activación Softmax para la predicción de la siguiente palabra
 
 ### Notebook:
-- [Desafío 3](https://github.com/chatoxz-wp/NPL_carreras_sebastian/blob/main/Desafio%203/ejercicios/Desafio_3.ipynb)
+- [Desafío 3](https://github.com/sebastian-carreras/NLP_carreras_sebastian/blob/main/Desafio%203/ejercicios/Desafio_3.ipynb)
 
 ---
 
@@ -89,5 +89,5 @@ Traducción automática neuronal (Neural Machine Translation), modelos Sequence-
 Modelo Encoder-Decoder con LSTMs implementado con la API funcional de Keras. Se construyen tres modelos distintos: un modelo completo para el entrenamiento, un modelo de solo Encoder y un modelo de solo Decoder para realizar las traducciones en la fase de inferencia
 
 ### Notebook: 
-- [Desafío 4 - Traductor ](https://github.com/chatoxz-wp/NPL_carreras_sebastian/blob/main/Desafio%204/ejercicios/Desafio%204_traductor.ipynb)
-- [Desafío 4 - QA Bot](https://github.com/chatoxz-wp/NPL_carreras_sebastian/blob/main/Desafio%204/ejercicios/desafio_4_QA_bot.ipynb) *Not working correctly*
+- [Desafío 4 - Traductor ](https://github.com/sebastian-carreras/NLP_carreras_sebastian/blob/main/Desafio%204/ejercicios/Desafio%204_traductor.ipynb)
+- [Desafío 4 - QA Bot](https://github.com/sebastian-carreras/NLP_carreras_sebastian/blob/main/Desafio%204/ejercicios/desafio_4_QA_bot.ipynb) *Not working correctly*
