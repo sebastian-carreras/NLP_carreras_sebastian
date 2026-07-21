@@ -155,30 +155,51 @@ can and cannot buy you, against a model trained on orders of magnitude more data
 learning with Hugging Face.
 📓 [Notebook](Desafio%204/ejercicios/Desafio%204_traductor.ipynb)
 
-### 4b — QA bot ⚠️ under repair
+### 4b — QA bot (a debugging story)
 
-A conversational QA bot built on the same encoder-decoder pattern, trained on `wiki_qa`.
-
-**Current status: the model is broken, and the diagnosis is in progress.** It emits the same
-degenerate output for every question:
+A conversational QA bot on the same encoder-decoder pattern. The **first version was broken** — it
+returned the same degenerate output for every question:
 
 ```
-Q: How can I reset my password?
-A: <start> <start> <start> ... following western western ... india india global
-
-Q: What payment methods do you accept?
-A: <start> <start> <start> ... following western western ... india india global   ← identical
+Q: How can I reset my password?    A: <start> <start> ... western western ... india global
+Q: What payment methods...?        A: <start> <start> ... western western ... india global   ← identical
 ```
 
-The root cause is a missing target shift: the decoder's input and target are the same array, so
-teacher forcing trains the model to predict token *t* from token *t* — the identity function.
-Seeded with `<start>` at inference, it predicts `<start>`, feeds it back, and loops. The output
-isn't noise; it's the model doing exactly what it was trained to do.
+The notebook now opens with the full diagnosis. There were five bugs, but two mattered, and both
+were in the **data, not the architecture**:
 
-This is being fixed properly (target shift, output vocabulary coverage, dataset selection) rather
-than papered over. It's left visible here in the meantime.
+1. **Missing target shift (the root cause).** The decoder's input and target were the same array,
+   so teacher forcing trained the model to predict token *t* from token *t* — the identity
+   function. Seeded with `<start>` at inference, it predicts `<start>`, feeds it back, and loops.
+   The garbage wasn't noise; it was the model doing exactly what it was trained to do.
+2. **94.9% of the training pairs were wrong answers.** `wiki_qa` is a sentence-*selection*
+   dataset — each row is (question, candidate, `label`) — and the notebook ignored `label`, so
+   19,320 of 20,360 rows taught the model to answer with a sentence that doesn't answer the
+   question. The fix switches to **PersonaChat**, the conversational dataset the assignment's own
+   example questions come from.
 
-📓 [Notebook](Desafio%204/ejercicios/desafio_4_QA_bot.ipynb)
+Also fixed: an 11 GB dense one-hot replaced by `sparse_categorical_crossentropy`; the output
+vocabulary (was truncated to 3k of 32k words); and a model that was redefined *after* training.
+
+**After the fix**, the same model answers coherently:
+
+```
+Q: Do you have any pet?            A: i do not have any pets
+Q: Where are you from?             A: i am from the midwest how about you
+Q: What do you do for a living?    A: i work at a local hospital
+Q: Hi, how are you doing?          A: i am good how are you
+Q: Do you read?                    A: i do not have any pets          ← still generic on some inputs
+```
+
+The remaining failure is honest and expected: a small seq2seq without attention, trained with
+cross-entropy, collapses toward frequent generic answers. Early stopping on validation loss
+(best epoch 14 of 17) keeps it from overtraining — the discipline that challenge 3 lacked.
+
+**The lesson:** both real bugs were silent. Nothing threw an exception, the accuracy curve went
+up, and the output was garbage — the exact failure mode that matters in an ML pipeline, where the
+dangerous errors are the ones that return a plausible number instead of crashing.
+
+📓 [Notebook](Desafio%204/ejercicios/desafio_4_QA_bot.ipynb) — runs end to end, cells execute in order.
 
 ---
 
@@ -192,8 +213,10 @@ jupyter lab
 **Dependencies:** `scikit-learn`, `gensim`, `tensorflow` / `keras`, `pandas`, `numpy`,
 `matplotlib`, `seaborn`, `transformers`, `datasets`.
 
-Challenge 4 additionally needs the **FastText** `cc.en.300.vec` vectors (~4.5 GB uncompressed);
-the notebook downloads them on first run and caches a pickle alongside.
+The **translator (4a)** additionally needs the **FastText** `cc.en.300.vec` vectors
+(~4.5 GB uncompressed); the notebook downloads them on first run and caches a pickle alongside.
+The **QA bot (4b)** trains its embeddings from scratch and needs no external vectors — it pulls
+**PersonaChat** through the `datasets` library on first run.
 
 The book corpora used by challenges 2 and 3 are included under each challenge's
 `ejercicios/libro_dataset/`.
