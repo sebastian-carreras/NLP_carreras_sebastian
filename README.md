@@ -46,7 +46,7 @@ imbalanced data. Unigrams beat bigrams here, and capping the vocabulary at 30k t
 third of the raw 101k — didn't hurt.
 
 **Topics:** TF-IDF, n-grams, cosine similarity, `GridSearchCV`, scikit-learn pipelines.
-📓 [Notebook](Desafio%201/ejercicios/Desafio_1.ipynb)
+📓 [Notebook](Challenge%201/exercises/Challenge_1.ipynb) · 📄 [Assignment](Challenge%201/exercises/Assignment.md)
 
 ---
 
@@ -86,7 +86,7 @@ because it's the one relation the text repeats often enough.
 
 **Topics:** Word2Vec (skip-gram / CBOW), negative sampling, semantic similarity, analogy
 arithmetic, embedding visualization.
-📓 [Notebook](Desafio%202/ejercicios/Desafio_2.ipynb) · 📄 [Enunciado](Desafio%202/ejercicios/Enunciado.md) *(Spanish)*
+📓 [Notebook](Challenge%202/exercises/Challenge_2.ipynb) · 📄 [Assignment](Challenge%202/exercises/Assignment.md)
 
 ---
 
@@ -123,7 +123,7 @@ good — with a corpus this size neither can be — but they fail in opposite an
 
 **Topics:** language modelling, RNN/LSTM/GRU, perplexity, tokenization, greedy search, beam
 search (deterministic and stochastic), temperature.
-📓 [Notebook](Desafio%203/ejercicios/Desafio_3.ipynb) · 📄 [Enunciado](Desafio%203/ejercicios/Enunciado.md) *(Spanish)*
+📓 [Notebook](Challenge%203/exercises/Challenge_3.ipynb) · 📄 [Assignment](Challenge%203/exercises/Assignment.md)
 
 ---
 
@@ -153,7 +153,7 @@ can and cannot buy you, against a model trained on orders of magnitude more data
 
 **Topics:** seq2seq, encoder-decoder, teacher forcing, separate inference models, transfer
 learning with Hugging Face.
-📓 [Notebook](Desafio%204/ejercicios/Desafio%204_traductor.ipynb)
+📓 [Notebook](Challenge%204/exercises/Challenge_4_translator.ipynb)
 
 ### 4b — QA bot (a debugging story)
 
@@ -199,7 +199,7 @@ cross-entropy, collapses toward frequent generic answers. Early stopping on vali
 up, and the output was garbage — the exact failure mode that matters in an ML pipeline, where the
 dangerous errors are the ones that return a plausible number instead of crashing.
 
-📓 [Notebook](Desafio%204/ejercicios/desafio_4_QA_bot.ipynb) — runs end to end, cells execute in order.
+📓 [Notebook](Challenge%204/exercises/Challenge_4_QA_bot.ipynb) — runs end to end, cells execute in order.
 
 ---
 
@@ -219,7 +219,7 @@ The **QA bot (4b)** trains its embeddings from scratch and needs no external vec
 **PersonaChat** through the `datasets` library on first run.
 
 The book corpora used by challenges 2 and 3 are included under each challenge's
-`ejercicios/libro_dataset/`.
+`exercises/book_dataset/`.
 
 ---
 
